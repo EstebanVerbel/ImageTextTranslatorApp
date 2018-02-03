@@ -8,9 +8,20 @@ namespace ImageTextTranslatorApp.Droid.Fragments
     public class PictureFragment : Android.Support.V4.App.Fragment, IFragmentVisible
     {
 
+        #region -- Members --
+
+        private Button _takePictureButton;
+        private ImageView _pictureImageView;
+
+        #endregion
+
+        #region -- Properties --
+
         public static PictureFragment NewInstance() => new PictureFragment { Arguments = new Bundle() };
         
         public PictureViewModel ViewModel { get; set; }
+
+        #endregion
 
         #region -- Overrides --
 
@@ -18,10 +29,7 @@ namespace ImageTextTranslatorApp.Droid.Fragments
         {
             base.OnCreate(savedInstanceState);  
         }
-
-        private Button _takePictureButton;
-        private ImageView _pictureImageView;
-
+        
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = inflater.Inflate(Resource.Layout.fragment_take_picture, container, false);
@@ -35,12 +43,14 @@ namespace ImageTextTranslatorApp.Droid.Fragments
         {
             base.OnStart();
             // TODO: Add click event handler to button
+            _takePictureButton.Click += takePictureButton_Click;
         }
         
         public override void OnStop()
         {
             base.OnStop();
             // TODO: Remove event handler from button
+            _takePictureButton.Click -= takePictureButton_Click;
         }
 
         #endregion
@@ -54,6 +64,16 @@ namespace ImageTextTranslatorApp.Droid.Fragments
 
         #endregion
 
-        // event handlers?
+        #region -- Event Handlers --
+
+        private void takePictureButton_Click(object sender, System.EventArgs e)
+        {
+            // TODO: Call take picture Command from ViewModel
+
+            throw new System.NotImplementedException();
+        }
+
+        #endregion
+
     }
 }
