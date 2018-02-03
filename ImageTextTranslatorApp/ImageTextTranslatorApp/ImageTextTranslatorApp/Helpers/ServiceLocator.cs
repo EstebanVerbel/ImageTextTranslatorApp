@@ -12,8 +12,7 @@ namespace ImageTextTranslatorApp.Helpers
 
         public void Register<TContract, TService>() where TService : new()
         {
-            registeredServices[typeof(TContract)] =
-                new Lazy<object>(() => Activator.CreateInstance(typeof(TService)));
+            registeredServices[typeof(TContract)] =  new Lazy<object>(() => Activator.CreateInstance(typeof(TService)));
         }
 
         public T Get<T>() where T : class

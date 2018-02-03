@@ -11,6 +11,7 @@ namespace ImageTextTranslatorApp.Droid
 			base.OnCreate(savedInstanceState);
 			SetContentView(LayoutResource);
 			Toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+
 			if (Toolbar != null)
 			{
 				SetSupportActionBar(Toolbar);

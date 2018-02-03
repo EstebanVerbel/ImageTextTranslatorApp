@@ -13,13 +13,12 @@ namespace ImageTextTranslatorApp.Droid
 {
 	public class BrowseFragment : Android.Support.V4.App.Fragment, IFragmentVisible
 	{
-		public static BrowseFragment NewInstance() =>
-			new BrowseFragment { Arguments = new Bundle() };
+		public static BrowseFragment NewInstance() => new BrowseFragment { Arguments = new Bundle() };
 
-		BrowseItemsAdapter adapter;
-		SwipeRefreshLayout refresher;
+		private BrowseItemsAdapter _adapter;
+		private SwipeRefreshLayout _refresher;
 
-		ProgressBar progress;
+		private ProgressBar _progress;
 		public static ItemsViewModel ViewModel { get; set; }
 
 		public override void OnCreate(Bundle savedInstanceState)
@@ -34,17 +33,16 @@ namespace ImageTextTranslatorApp.Droid
 			ViewModel = new ItemsViewModel();
 
 			View view = inflater.Inflate(Resource.Layout.fragment_browse, container, false);
-			var recyclerView =
-				view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
+			var recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
 
 			recyclerView.HasFixedSize = true;
-			recyclerView.SetAdapter(adapter = new BrowseItemsAdapter(Activity, ViewModel));
+			recyclerView.SetAdapter(_adapter = new BrowseItemsAdapter(Activity, ViewModel));
 
-			refresher = view.FindViewById<SwipeRefreshLayout>(Resource.Id.refresher);
-			refresher.SetColorSchemeColors(Resource.Color.accent);
+			_refresher = view.FindViewById<SwipeRefreshLayout>(Resource.Id.refresher);
+			_refresher.SetColorSchemeColors(Resource.Color.accent);
 
-			progress = view.FindViewById<ProgressBar>(Resource.Id.progressbar_loading);
-			progress.Visibility = ViewStates.Gone;
+			_progress = view.FindViewById<ProgressBar>(Resource.Id.progressbar_loading);
+			_progress.Visibility = ViewStates.Gone;
 
 			return view;
 		}
@@ -53,8 +51,8 @@ namespace ImageTextTranslatorApp.Droid
 		{
 			base.OnStart();
 
-			refresher.Refresh += Refresher_Refresh;
-			adapter.ItemClick += Adapter_ItemClick;
+			_refresher.Refresh += Refresher_Refresh;
+			_adapter.ItemClick += Adapter_ItemClick;
 
 			if (ViewModel.Items.Count == 0)
 				ViewModel.LoadItemsCommand.Execute(null);
@@ -63,8 +61,8 @@ namespace ImageTextTranslatorApp.Droid
 		public override void OnStop()
 		{
 			base.OnStop();
-			refresher.Refresh -= Refresher_Refresh;
-			adapter.ItemClick -= Adapter_ItemClick;
+			_refresher.Refresh -= Refresher_Refresh;
+			_adapter.ItemClick -= Adapter_ItemClick;
 		}
 
 		void Adapter_ItemClick(object sender, RecyclerClickEventArgs e)
@@ -79,7 +77,7 @@ namespace ImageTextTranslatorApp.Droid
 		void Refresher_Refresh(object sender, EventArgs e)
 		{
 			ViewModel.LoadItemsCommand.Execute(null);
-			refresher.Refreshing = false;
+			_refresher.Refreshing = false;
 		}
 
 		public void BecameVisible()
@@ -88,19 +86,19 @@ namespace ImageTextTranslatorApp.Droid
 		}
 	}
 
-	class BrowseItemsAdapter : BaseRecycleViewAdapter
+	internal class BrowseItemsAdapter : BaseRecycleViewAdapter
 	{
-		ItemsViewModel viewModel;
-		Activity activity;
+		private ItemsViewModel _viewModel;
+		private Activity _activity;
 
 		public BrowseItemsAdapter(Activity activity, ItemsViewModel viewModel)
 		{
-			this.viewModel = viewModel;
-			this.activity = activity;
+			_viewModel = viewModel;
+			_activity = activity;
 
-			this.viewModel.Items.CollectionChanged += (sender, args) =>
+			this._viewModel.Items.CollectionChanged += (sender, args) =>
 			{
-				this.activity.RunOnUiThread(NotifyDataSetChanged);
+				this._activity.RunOnUiThread(NotifyDataSetChanged);
 			};
 		}
 
@@ -119,7 +117,7 @@ namespace ImageTextTranslatorApp.Droid
 		// Replace the contents of a view (invoked by the layout manager)
 		public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
 		{
-			var item = viewModel.Items[position];
+			var item = _viewModel.Items[position];
 
 			// Replace the contents of the view with that element
 			var myHolder = holder as MyViewHolder;
@@ -127,7 +125,7 @@ namespace ImageTextTranslatorApp.Droid
 			myHolder.DetailTextView.Text = item.Description;
 		}
 
-		public override int ItemCount => viewModel.Items.Count;
+		public override int ItemCount => _viewModel.Items.Count;
 	}
 
 	public class MyViewHolder : RecyclerView.ViewHolder
@@ -135,8 +133,10 @@ namespace ImageTextTranslatorApp.Droid
 		public TextView TextView { get; set; }
 		public TextView DetailTextView { get; set; }
 
-		public MyViewHolder(View itemView, Action<RecyclerClickEventArgs> clickListener,
-							Action<RecyclerClickEventArgs> longClickListener) : base(itemView)
+		public MyViewHolder(View itemView, 
+                            Action<RecyclerClickEventArgs> clickListener,
+							Action<RecyclerClickEventArgs> longClickListener) 
+            : base(itemView)
 		{
 			TextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text1);
 			DetailTextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text2);

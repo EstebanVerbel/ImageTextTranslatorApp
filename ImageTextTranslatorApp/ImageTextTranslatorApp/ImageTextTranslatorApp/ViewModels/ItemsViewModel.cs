@@ -18,6 +18,7 @@ namespace ImageTextTranslatorApp.ViewModels
         {
             Title = "Browse";
             Items = new ObservableCollection<Item>();
+
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             AddItemCommand = new Command<Item>(async (Item item) => await AddItem(item));
         }

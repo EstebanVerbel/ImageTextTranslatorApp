@@ -9,8 +9,7 @@ namespace ImageTextTranslatorApp.Droid
 {
 	public class AboutFragment : Android.Support.V4.App.Fragment, IFragmentVisible
 	{
-		public static AboutFragment NewInstance() =>
-			new AboutFragment { Arguments = new Bundle() };
+		public static AboutFragment NewInstance() => new AboutFragment { Arguments = new Bundle() };
 
 		public AboutViewModel ViewModel { get; set; }
 

@@ -18,23 +18,24 @@ namespace ImageTextTranslatorApp.Droid
 	{
 		protected override int LayoutResource => Resource.Layout.activity_main;
 
-		ViewPager pager;
-		TabsAdapter adapter;
+		private ViewPager _pager; // for gestures
+		private TabsAdapter _adapter;
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
-			adapter = new TabsAdapter(this, SupportFragmentManager);
-			pager = FindViewById<ViewPager>(Resource.Id.viewpager);
+			_adapter = new TabsAdapter(this, SupportFragmentManager);
+			_pager = FindViewById<ViewPager>(Resource.Id.viewpager); 
 			var tabs = FindViewById<TabLayout>(Resource.Id.tabs);
-			pager.Adapter = adapter;
-			tabs.SetupWithViewPager(pager);
-			pager.OffscreenPageLimit = 3;
 
-			pager.PageSelected += (sender, args) =>
+			_pager.Adapter = _adapter;
+			tabs.SetupWithViewPager(_pager);
+			_pager.OffscreenPageLimit = 3;
+
+			_pager.PageSelected += (sender, args) =>
 			{
-				var fragment = adapter.InstantiateItem(pager, args.Position) as IFragmentVisible;
+				var fragment = _adapter.InstantiateItem(_pager, args.Position) as IFragmentVisible;
 
 				fragment?.BecameVisible();
 			};
@@ -56,7 +57,9 @@ namespace ImageTextTranslatorApp.Droid
 		}
 	}
 
-	class TabsAdapter : FragmentStatePagerAdapter
+    #region -- TabsAdapter --
+
+    internal class TabsAdapter : FragmentStatePagerAdapter
 	{
 		string[] titles;
 
@@ -82,4 +85,7 @@ namespace ImageTextTranslatorApp.Droid
 
 		public override int GetItemPosition(Java.Lang.Object frag) => PositionNone;
 	}
+
+    #endregion
+
 }
