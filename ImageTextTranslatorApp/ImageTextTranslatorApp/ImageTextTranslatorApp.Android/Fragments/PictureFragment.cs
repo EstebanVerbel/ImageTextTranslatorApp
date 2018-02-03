@@ -1,12 +1,13 @@
 ﻿using Android.OS;
 using Android.Views;
+using Android.Widget;
 using ImageTextTranslatorApp.ViewModels;
 
 namespace ImageTextTranslatorApp.Droid.Fragments
 {
     public class PictureFragment : Android.Support.V4.App.Fragment, IFragmentVisible
     {
-        // new instance static property
+
         public static PictureFragment NewInstance() => new PictureFragment { Arguments = new Bundle() };
         
         public PictureViewModel ViewModel { get; set; }
@@ -17,15 +18,17 @@ namespace ImageTextTranslatorApp.Droid.Fragments
         {
             base.OnCreate(savedInstanceState);  
         }
-        
+
+        private Button _takePictureButton;
+        private ImageView _pictureImageView;
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            var view = inflater.Inflate(Resource.Layout.fragment_take_picture, container, false);
             ViewModel = new PictureViewModel();
-            
-            return base.OnCreateView(inflater, container, savedInstanceState);
-
-            
-            // TODO: Inflate button to take picture
+            _takePictureButton = view.FindViewById<Button>(Resource.Id.takePictureButton);
+            _pictureImageView = view.FindViewById<ImageView>(Resource.Id.pictureImageView);
+            return view;
         }
         
         public override void OnStart()
