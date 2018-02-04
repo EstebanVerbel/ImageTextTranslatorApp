@@ -73,8 +73,7 @@ namespace ImageTextTranslatorApp.Droid
         {
             // TODO: Call take picture Command from ViewModel
             
-            Intent intent = new Intent(MediaStore.ActionImageCapture);
-            StartActivityForResult(intent, 0);
+            
 
 
             //throw new System.NotImplementedException();

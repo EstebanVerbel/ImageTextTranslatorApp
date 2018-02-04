@@ -3,6 +3,9 @@ using System;
 using Android.App;
 using Android.OS;
 using Android.Runtime;
+using ImageTextTranslatorApp.Droid.Services;
+using ImageTextTranslatorApp.Helpers;
+using ImageTextTranslatorApp.Models.Services;
 using Plugin.CurrentActivity;
 
 namespace ImageTextTranslatorApp.Droid
@@ -21,6 +24,9 @@ namespace ImageTextTranslatorApp.Droid
 			base.OnCreate();
 			RegisterActivityLifecycleCallbacks(this);
 
+            // register take picture class
+            ServiceLocator.Instance.Register<ITakePicture, TakePicture>();
+            
 			App.Initialize();
 		}
 
