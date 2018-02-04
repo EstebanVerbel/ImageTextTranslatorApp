@@ -81,13 +81,15 @@ namespace ImageTextTranslatorApp.Droid
         }
 
         #endregion
-        
-        //public override void OnActivityResult(int requestCode, int resultCode, Intent data)
-        //{
-        //    base.OnActivityResult(requestCode, resultCode, data);
 
-        //    Bitmap pictureBitmap = (Bitmap)data.Extras.Get("data");
-        //}
-        
+        public override void OnActivityResult(int requestCode, int resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+
+            Bitmap pictureBitmap = (Bitmap)data.Extras.Get("data");
+
+
+        }
+
     }
 }
