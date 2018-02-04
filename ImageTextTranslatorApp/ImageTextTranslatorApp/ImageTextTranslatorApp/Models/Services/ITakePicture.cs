@@ -6,10 +6,11 @@ namespace ImageTextTranslatorApp.Models.Services
 {
     public interface ITakePicture
     {
-
-        void TakeAPicture();
+        Action TakeAPicture();
 
         void GetPicture();
+
+        bool CanTakePicture();
 
     }
 }

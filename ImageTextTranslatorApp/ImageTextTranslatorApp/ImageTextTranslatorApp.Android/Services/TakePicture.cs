@@ -16,15 +16,27 @@ namespace ImageTextTranslatorApp.Droid.Services
 {
     public class TakePicture : Android.Support.V4.App.Fragment, ITakePicture
     {
+
+        public Action TakeAPicture()
+        {
+            Action takePictureDel = delegate() 
+            {
+                Intent intent = new Intent(MediaStore.ActionImageCapture);
+                StartActivityForResult(intent, 0);
+            };
+
+            return takePictureDel;
+        }
+        
         public void GetPicture()
         {
             throw new NotImplementedException();
         }
 
-        public void TakeAPicture()
+        public bool CanTakePicture()
         {
-            Intent intent = new Intent(MediaStore.ActionImageCapture);
-            StartActivityForResult(intent, 0);
+            throw new NotImplementedException();
         }
+
     }
 }
