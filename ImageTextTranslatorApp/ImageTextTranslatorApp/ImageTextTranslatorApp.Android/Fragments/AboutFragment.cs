@@ -21,14 +21,15 @@ namespace ImageTextTranslatorApp.Droid
 		}
 
 		Button learnMoreButton;
-
-		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
-			var view = inflater.Inflate(Resource.Layout.fragment_about, container, false);
-			ViewModel = new AboutViewModel();
-			learnMoreButton = view.FindViewById<Button>(Resource.Id.button_learn_more);
-			return view;
-		}
+            var view = inflater.Inflate(Resource.Layout.fragment_about, container, false);
+
+            ViewModel = new AboutViewModel();
+            learnMoreButton = view.FindViewById<Button>(Resource.Id.button_learn_more);
+            return view;
+        }
 
 		public override void OnStart()
 		{

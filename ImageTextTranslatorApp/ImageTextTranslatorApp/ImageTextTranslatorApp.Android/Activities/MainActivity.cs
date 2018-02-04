@@ -10,7 +10,7 @@ using Android.Support.Design.Widget;
 
 namespace ImageTextTranslatorApp.Droid
 {
-	[Activity(Label = "@string/app_name", Icon = "@mipmap/icon",
+    [Activity(Label = "@string/app_name", Icon = "@mipmap/icon",
 		LaunchMode = LaunchMode.SingleInstance,
 		ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
 		ScreenOrientation = ScreenOrientation.Portrait)]
@@ -77,9 +77,11 @@ namespace ImageTextTranslatorApp.Droid
 		{
 			switch (position)
 			{
-				case 0: return BrowseFragment.NewInstance();
-				case 1: return AboutFragment.NewInstance();
-			}
+                case 0: return PictureFragment.NewInstance();
+                case 1: return AboutFragment.NewInstance();
+                //case 1: return BrowseFragment.NewInstance();
+                
+            }
 			return null;
 		}
 

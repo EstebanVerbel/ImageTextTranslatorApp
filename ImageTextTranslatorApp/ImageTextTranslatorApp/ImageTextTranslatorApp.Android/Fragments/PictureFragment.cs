@@ -1,9 +1,12 @@
-﻿using Android.OS;
+﻿using Android.Content;
+using Android.Graphics;
+using Android.OS;
+using Android.Provider;
 using Android.Views;
 using Android.Widget;
 using ImageTextTranslatorApp.ViewModels;
 
-namespace ImageTextTranslatorApp.Droid.Fragments
+namespace ImageTextTranslatorApp.Droid
 {
     public class PictureFragment : Android.Support.V4.App.Fragment, IFragmentVisible
     {
@@ -69,11 +72,22 @@ namespace ImageTextTranslatorApp.Droid.Fragments
         private void takePictureButton_Click(object sender, System.EventArgs e)
         {
             // TODO: Call take picture Command from ViewModel
+            
+            Intent intent = new Intent(MediaStore.ActionImageCapture);
+            StartActivityForResult(intent, 0);
 
-            throw new System.NotImplementedException();
+
+            //throw new System.NotImplementedException();
         }
 
         #endregion
+        
+        //public override void OnActivityResult(int requestCode, int resultCode, Intent data)
+        //{
+        //    base.OnActivityResult(requestCode, resultCode, data);
 
+        //    Bitmap pictureBitmap = (Bitmap)data.Extras.Get("data");
+        //}
+        
     }
 }

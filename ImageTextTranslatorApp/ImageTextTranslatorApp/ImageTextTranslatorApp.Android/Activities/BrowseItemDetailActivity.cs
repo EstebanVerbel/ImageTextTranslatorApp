@@ -8,8 +8,8 @@ using ImageTextTranslatorApp.ViewModels;
 
 namespace ImageTextTranslatorApp.Droid
 {
-	[Activity(Label = "Details")]//, ParentActivity = typeof(MainActivity))]
-//	[MetaData("android.support.PARENT_ACTIVITY", Value = ".MainActivity")]
+	[Activity(Label = "Details", ParentActivity = typeof(MainActivity))]
+	[MetaData("android.support.PARENT_ACTIVITY", Value = ".MainActivity")]
 	public class BrowseItemDetailActivity : BaseActivity
 	{
 		/// <summary>
