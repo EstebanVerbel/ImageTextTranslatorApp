@@ -16,7 +16,21 @@ namespace ImageTextTranslatorApp.ViewModels
             // TODO: Set implementation of TakePictureCommand (Get from Android/iOS Projects)
             // maybe pass through constructor
             //_takePicture = ServiceLocator.Get<ITakePicture>();
+
+
+            try
+            {
+                ITakePicture test = _takePicture;
+            }
+            catch (System.Exception e)
+            {
+
+                throw e;
+            }
+
+
             
+
             TakePictureCommand = new Command(_takePicture.TakeAPicture());
 
         }

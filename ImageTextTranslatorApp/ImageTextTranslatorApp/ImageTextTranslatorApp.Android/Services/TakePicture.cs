@@ -12,10 +12,14 @@ using Android.Views;
 using Android.Widget;
 using ImageTextTranslatorApp.Models.Services;
 
-namespace ImageTextTranslatorApp.Droid.Services
+namespace ImageTextTranslatorApp.Droid
 {
     public class TakePicture : Android.Support.V4.App.Fragment, ITakePicture
     {
+
+        public TakePicture()
+        {
+        }
 
         public Action TakeAPicture()
         {

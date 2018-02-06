@@ -1,17 +1,13 @@
-using System;
-
 using Android.App;
 using Android.OS;
 using Android.Runtime;
-using ImageTextTranslatorApp.Droid.Services;
-using ImageTextTranslatorApp.Helpers;
-using ImageTextTranslatorApp.Models.Services;
 using Plugin.CurrentActivity;
+using System;
 
 namespace ImageTextTranslatorApp.Droid
 {
-	//You can specify additional application information in this attribute
-	[Application]
+    //You can specify additional application information in this attribute
+    [Application]
 	public class MainApplication : Application, Application.IActivityLifecycleCallbacks
 	{
 		public MainApplication(IntPtr handle, JniHandleOwnership transer)
@@ -23,9 +19,6 @@ namespace ImageTextTranslatorApp.Droid
 		{
 			base.OnCreate();
 			RegisterActivityLifecycleCallbacks(this);
-
-            // register take picture class
-            ServiceLocator.Instance.Register<ITakePicture, TakePicture>();
             
 			App.Initialize();
 		}

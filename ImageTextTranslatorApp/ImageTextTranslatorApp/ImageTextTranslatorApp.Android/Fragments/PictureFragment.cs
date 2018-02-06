@@ -72,23 +72,22 @@ namespace ImageTextTranslatorApp.Droid
         private void takePictureButton_Click(object sender, System.EventArgs e)
         {
             // TODO: Call take picture Command from ViewModel
-            
-            
 
+
+            ViewModel.TakePictureCommand.Execute(null);
 
             //throw new System.NotImplementedException();
         }
 
         #endregion
 
-        public override void OnActivityResult(int requestCode, int resultCode, Intent data)
-        {
-            base.OnActivityResult(requestCode, resultCode, data);
+        //public override void OnActivityResult(int requestCode, int resultCode, Intent data)
+        //{
+        //    base.OnActivityResult(requestCode, resultCode, data);
 
-            Bitmap pictureBitmap = (Bitmap)data.Extras.Get("data");
-
-
-        }
+        //    Bitmap pictureBitmap = (Bitmap)data.Extras.Get("data");
+            
+        //}
 
     }
 }

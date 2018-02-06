@@ -7,6 +7,8 @@ using Android.Widget;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Support.Design.Widget;
+using ImageTextTranslatorApp.Helpers;
+using ImageTextTranslatorApp.Models.Services;
 
 namespace ImageTextTranslatorApp.Droid
 {
@@ -25,7 +27,10 @@ namespace ImageTextTranslatorApp.Droid
 		{
 			base.OnCreate(savedInstanceState);
 
-			_adapter = new TabsAdapter(this, SupportFragmentManager);
+            // register take picture class
+            ServiceLocator.Instance.Register<ITakePicture, TakePicture>();
+
+            _adapter = new TabsAdapter(this, SupportFragmentManager);
 			_pager = FindViewById<ViewPager>(Resource.Id.viewpager); 
 			var tabs = FindViewById<TabLayout>(Resource.Id.tabs);
 
@@ -48,7 +53,7 @@ namespace ImageTextTranslatorApp.Droid
 
 			SupportActionBar.SetDisplayHomeAsUpEnabled(false);
 			SupportActionBar.SetHomeButtonEnabled(false);
-		}
+        }
 
 		public override bool OnCreateOptionsMenu(IMenu menu)
 		{
