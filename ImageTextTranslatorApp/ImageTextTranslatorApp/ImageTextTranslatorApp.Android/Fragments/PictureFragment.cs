@@ -61,7 +61,7 @@ namespace ImageTextTranslatorApp.Droid
 
         public void BecameVisible()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
