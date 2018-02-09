@@ -79,7 +79,7 @@ namespace ImageTextTranslatorApp.Droid
         {
             switch (position)
             {
-                case 0: return BrowseFragment.NewInstance();
+                case 0: return PictureFragment.NewInstance();
                 case 1: return AboutFragment.NewInstance();
             }
             return null;
