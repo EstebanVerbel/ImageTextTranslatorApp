@@ -1,11 +1,10 @@
-﻿
-
-using Android.Content;
+﻿using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Provider;
 using Android.Views;
 using Android.Widget;
+using ImageTextTranslatorApp.ViewModels;
 using System;
 
 namespace ImageTextTranslatorApp.Droid
@@ -14,7 +13,9 @@ namespace ImageTextTranslatorApp.Droid
     {
 
         public static PictureFragment NewInstance() => new PictureFragment { Arguments = new Bundle() };
-        
+
+        public PictureViewModel ViewModel { get; set; }
+
         private Button _takePictureButton;
         private ImageView _pictureImageView;
         
@@ -27,7 +28,7 @@ namespace ImageTextTranslatorApp.Droid
         {
             // Inflate Picture Fragment
             var view = inflater.Inflate(Resource.Layout.fragment_picture, container, false);
-
+            ViewModel = new PictureViewModel();
             _takePictureButton = view.FindViewById<Button>(Resource.Id.takePictureButton);
             _pictureImageView = view.FindViewById<ImageView>(Resource.Id.pictureImageView);
 
@@ -52,11 +53,20 @@ namespace ImageTextTranslatorApp.Droid
             StartActivityForResult(intent, 0);
         }
 
+        private void SetViewModelPictureStream(Bitmap bitmap)
+        {
+            ViewModel.Picture = new Models.Picture();
+            bitmap.Compress(Bitmap.CompressFormat.Png, 0, ViewModel.Picture.Stream);
+        }
+
         public override void OnActivityResult(int requestCode, int resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
             Bitmap bitmap = (Bitmap)data.Extras.Get("data");
             _pictureImageView.SetImageBitmap(bitmap);
+            
+            if (bitmap != null)
+                SetViewModelPictureStream(bitmap);
         }
 
         public void BecameVisible()
