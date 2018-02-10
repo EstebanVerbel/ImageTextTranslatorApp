@@ -49,8 +49,6 @@ namespace ImageTextTranslatorApp.Droid
 
             SupportActionBar.SetDisplayHomeAsUpEnabled(false);
             SupportActionBar.SetHomeButtonEnabled(false);
-
-
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
