@@ -48,10 +48,7 @@ namespace ImageTextTranslatorApp.Droid
         {
             base.OnActivityResult(requestCode, resultCode, data);
         }
-
-
-
-
+        
         public override void OnStop()
         {
             base.OnStop();

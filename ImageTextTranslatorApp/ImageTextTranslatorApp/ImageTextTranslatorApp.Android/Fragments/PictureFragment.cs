@@ -6,6 +6,7 @@ using Android.Views;
 using Android.Widget;
 using ImageTextTranslatorApp.ViewModels;
 using System;
+using System.IO;
 
 namespace ImageTextTranslatorApp.Droid
 {
@@ -56,9 +57,21 @@ namespace ImageTextTranslatorApp.Droid
         private void SetViewModelPictureStream(Bitmap bitmap)
         {
             ViewModel.Picture = new Models.Picture();
-            bitmap.Compress(Bitmap.CompressFormat.Png, 0, ViewModel.Picture.Stream);
+            ViewModel.Picture.PictureData =  ConvertBitmapToByteArray(bitmap);
         }
 
+        private byte[] ConvertBitmapToByteArray(Bitmap bitmap)
+        {
+            byte[] bitmapData;
+            using (var stream = new MemoryStream())
+            {
+                bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                bitmapData = stream.ToArray();
+            }
+
+            return bitmapData;
+        }
+        
         public override void OnActivityResult(int requestCode, int resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
