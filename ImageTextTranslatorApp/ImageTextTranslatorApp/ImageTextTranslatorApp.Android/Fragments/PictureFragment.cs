@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Provider;
 using Android.Views;
 using Android.Widget;
+using ImageTextTranslatorApp.Droid.Helpers;
 using ImageTextTranslatorApp.ViewModels;
 using System;
 using System.IO;
@@ -62,14 +63,8 @@ namespace ImageTextTranslatorApp.Droid
 
         private byte[] ConvertBitmapToByteArray(Bitmap bitmap)
         {
-            byte[] bitmapData;
-            using (var stream = new MemoryStream())
-            {
-                bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
-                bitmapData = stream.ToArray();
-            }
-
-            return bitmapData;
+            BitmapConverter converter = new BitmapConverter(bitmap);
+            return converter.ConvertToByteArray();
         }
         
         public override void OnActivityResult(int requestCode, int resultCode, Intent data)
