@@ -2,6 +2,7 @@
 {
     public class Item : BaseDataObject
     {
+
         public Item() : base()
         {
         }
