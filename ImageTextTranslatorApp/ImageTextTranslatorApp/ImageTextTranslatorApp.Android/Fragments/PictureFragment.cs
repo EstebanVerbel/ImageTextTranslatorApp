@@ -13,7 +13,6 @@ namespace ImageTextTranslatorApp.Droid
 {
     public class PictureFragment : Android.Support.V4.App.Fragment, IFragmentVisible
     {
-
         public static PictureFragment NewInstance() => new PictureFragment { Arguments = new Bundle() };
 
         public PictureViewModel ViewModel { get; set; }
@@ -48,7 +47,19 @@ namespace ImageTextTranslatorApp.Droid
             base.OnStop();
             _takePictureButton.Click -= takePictureButton_Click;
         }
-        
+
+        public override void OnActivityResult(int requestCode, int resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            Bitmap bitmap = (Bitmap)data.Extras.Get("data");
+            _pictureImageView.SetImageBitmap(bitmap);
+
+            if (bitmap != null)
+                SetViewModelPictureStream(bitmap);
+
+            // TODO: Display message to user saying something went wrong
+        }
+
         private void takePictureButton_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(MediaStore.ActionImageCapture);
@@ -67,16 +78,7 @@ namespace ImageTextTranslatorApp.Droid
             return converter.ConvertToByteArray();
         }
         
-        public override void OnActivityResult(int requestCode, int resultCode, Intent data)
-        {
-            base.OnActivityResult(requestCode, resultCode, data);
-            Bitmap bitmap = (Bitmap)data.Extras.Get("data");
-            _pictureImageView.SetImageBitmap(bitmap);
-            
-            if (bitmap != null)
-                SetViewModelPictureStream(bitmap);
-        }
-
+        
         public void BecameVisible()
         {
             
