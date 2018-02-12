@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using ImageTextTranslatorApp.Services.Keys;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -7,11 +8,6 @@ namespace ImageTextTranslatorApp.Services
 {
     internal class ComputerVisionService
     {
-
-        private const string _subscriptionsKey = "";
-        
-        // const string uriBase = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/recognizeText";
-        private const string _uriBase = "https://westus.api.cognitive.microsoft.com/vision/v1.0/recognizeText";
 
         private byte[] _pictureData;
 
@@ -25,13 +21,15 @@ namespace ImageTextTranslatorApp.Services
             HttpClient httpClient = new HttpClient();
             
             // Request headers.
-            httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _subscriptionsKey);
-            
+            httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", APIKeys.ComputerVisionServiceKey);
+
             // Request parameter. Set "handwriting" to false for printed text.
-            string requestParameters = "handwriting=true";
-            
+            //string requestParameters = "handwriting=true";
+            //string requestParameters = "visualFeatures=Categories,Description,Color&language=en";
+            string requestParameters = "language=unk&detectOrientation=true";
+
             // Assemble the URI for the REST API Call.
-            string uri = $"{_uriBase}?{requestParameters}";
+            string uri = $"{APIKeys.ComputerVisionUriBase}?{requestParameters}";
             
             HttpResponseMessage response = null;
 
@@ -91,8 +89,14 @@ namespace ImageTextTranslatorApp.Services
             //Console.WriteLine("\nResponse:\n");
             //Console.WriteLine(JsonPrettyPrint(contentString));
 
+
+
+            string textito = contentString;
+
             return "";
         }
+        
 
     }
+    
 }
