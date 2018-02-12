@@ -49,6 +49,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ComputerVisionService.cs" />
     <Compile Include="Services\IDataStore.cs" />
+    <Compile Include="Services\Keys\APIKeys.cs" />
+    <Compile Include="Services\Keys\APIKeysTemplate.cs" />
     <Compile Include="Services\MockDataStore.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />

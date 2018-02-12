@@ -286,3 +286,5 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+ImageTextTranslatorApp/ImageTextTranslatorApp/ImageTextTranslatorApp/Services/Keys/APIKeys.cs
