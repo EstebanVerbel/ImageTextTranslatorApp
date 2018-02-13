@@ -96,7 +96,6 @@ namespace ImageTextTranslatorApp.Services
             return "";
         }
         
-
     }
     
 }

@@ -58,7 +58,7 @@ namespace ImageTextTranslatorApp.Droid
                 SetViewModelPictureStream(bitmap);
 
             // TODO: Display message to user saying something went wrong
-            ViewModel.ReadTextFromImageAsync();
+            ViewModel.GetTextCommand.Execute(null); 
         }
 
         private void takePictureButton_Click(object sender, EventArgs e)

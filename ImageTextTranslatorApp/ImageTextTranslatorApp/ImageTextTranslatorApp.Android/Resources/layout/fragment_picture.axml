@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+  
   <Button
         android:id="@+id/takePictureButton"
         android:layout_width="match_parent"
@@ -11,11 +12,10 @@
         android:gravity="center"
         android:backgroundTint="@color/primary"
         android:theme="@style/button_primary" />
-  
   <ImageView
         android:id="@+id/pictureImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true" />
   
- </LinearLayout>
+</LinearLayout>
