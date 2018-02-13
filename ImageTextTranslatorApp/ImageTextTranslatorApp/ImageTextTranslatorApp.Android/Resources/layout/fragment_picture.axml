@@ -4,14 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
   
-  <Button
+  <LinearLayout 
+    android:id="@+id/LinearLayout02" 
+    android:layout_height="wrap_content" 
+    android:layout_width="fill_parent">
+  
+    <Button
         android:id="@+id/takePictureButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:text="@string/take_picture"
         android:gravity="center"
         android:backgroundTint="@color/primary"
         android:theme="@style/button_primary" />
+      
+    <Button 
+        android:id="@+id/readTextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="@string/read_text"
+        android:gravity="center"
+        android:backgroundTint="@color/primary"
+        android:theme="@style/button_primary" />
+  
+  </LinearLayout>    
+
   <ImageView
         android:id="@+id/pictureImageView"
         android:layout_width="match_parent"
