@@ -5,6 +5,9 @@
         internal static string ComputerVisionServiceKey = "";
 
         internal static string ComputerVisionUriBase = "";
-        
+
+        internal static string TranslatorTextServiceKey = "";
+
+        internal static string TranslatorTextUriBase = "";
     }
 }
