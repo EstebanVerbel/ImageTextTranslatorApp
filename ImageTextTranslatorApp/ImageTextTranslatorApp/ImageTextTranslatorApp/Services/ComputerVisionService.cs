@@ -84,7 +84,7 @@ namespace ImageTextTranslatorApp.Services
             {
                 // time out error
             }
-            
+
             // TODO: this is json response. Need to get the text from it
             return contentString;
         }
