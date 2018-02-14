@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
   
   <LinearLayout 
-    android:id="@+id/LinearLayout02" 
+    android:id="@+id/buttonsLinearLayout" 
     android:layout_height="wrap_content" 
     android:layout_width="fill_parent">
   

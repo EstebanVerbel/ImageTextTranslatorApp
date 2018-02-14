@@ -1940,9 +1940,6 @@ namespace ImageTextTranslatorApp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060082
-			public const int LinearLayout02 = 2131099778;
-			
 			// aapt resource value: 0x7f060086
 			public const int action0 = 2131099782;
 			
@@ -2017,6 +2014,9 @@ namespace ImageTextTranslatorApp.Droid
 			
 			// aapt resource value: 0x7f060072
 			public const int button_signin = 2131099762;
+			
+			// aapt resource value: 0x7f060082
+			public const int buttonsLinearLayout = 2131099778;
 			
 			// aapt resource value: 0x7f060087
 			public const int cancel_action = 2131099783;

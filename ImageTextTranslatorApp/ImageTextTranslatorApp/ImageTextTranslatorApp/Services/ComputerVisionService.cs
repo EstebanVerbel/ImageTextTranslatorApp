@@ -41,8 +41,8 @@ namespace ImageTextTranslatorApp.Services
             // Request body. Posts a locally stored JPEG image.
             ByteArrayContent content = new ByteArrayContent(_pictureData);
 
-            // This example uses content type "application/octet-stream".
-            // You can also use "application/json" and specify an image URL.
+            // Using content type "application/octet-stream".
+            // But can also use "application/json" and specify an image URL.
             content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
 
             // The first REST call starts the async process to analyze the written text in the image.
@@ -84,16 +84,9 @@ namespace ImageTextTranslatorApp.Services
             {
                 // time out error
             }
-
-            //// Display the JSON response.
-            //Console.WriteLine("\nResponse:\n");
-            //Console.WriteLine(JsonPrettyPrint(contentString));
-
-
-
-            string textito = contentString;
-
-            return "";
+            
+            // TODO: this is json response. Need to get the text from it
+            return contentString;
         }
         
     }
