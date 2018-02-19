@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Helpers\JsonDeserializer.cs" />
     <Compile Include="Helpers\MessagingCenter.cs" />
     <Compile Include="Helpers\MessagingCenterAlert.cs" />
     <Compile Include="Helpers\ObservableObject.cs" />
