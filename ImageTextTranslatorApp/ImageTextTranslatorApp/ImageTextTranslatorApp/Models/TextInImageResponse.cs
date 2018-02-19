@@ -14,7 +14,7 @@ namespace ImageTextTranslatorApp.Models
 
     internal class RecognitionResult
     {
-        public List<Lines> lines { get; set; }   
+        public Lines[] lines { get; set; }   
     }
 
     internal class Lines
