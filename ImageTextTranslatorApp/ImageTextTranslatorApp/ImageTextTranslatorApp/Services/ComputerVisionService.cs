@@ -1,4 +1,6 @@
-﻿using ImageTextTranslatorApp.Services.Keys;
+﻿using ImageTextTranslatorApp.Helpers;
+using ImageTextTranslatorApp.Models;
+using ImageTextTranslatorApp.Services.Keys;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -8,13 +10,14 @@ namespace ImageTextTranslatorApp.Services
 {
     internal class ComputerVisionService
     {
-
         private byte[] _pictureData;
 
         internal ComputerVisionService(byte[] pictureData)
         {
             _pictureData = pictureData;
         }
+        
+        // TODO: Break down the method below. Way too many things going on here
 
         internal async Task<string> GetImageTextAsync()
         {
@@ -84,9 +87,20 @@ namespace ImageTextTranslatorApp.Services
             {
                 // time out error
             }
+            
+            // deserialize response 
+            JsonDeserializer<TextInImageResponse> deserializer = new JsonDeserializer<TextInImageResponse>();
+            var responseJsonObject = deserializer.Deserialize(contentString);
 
-            // TODO: this is json response. Need to get the text from it
-            return contentString;
+            string responseText = "";
+
+            foreach (var line in responseJsonObject.recognitionResult.lines)
+            {
+                responseText += $"{line.text}{System.Environment.NewLine}";
+            }
+            
+            // TODO: maybe return response object instead of string only
+            return responseText.Trim();
         }
         
     }
