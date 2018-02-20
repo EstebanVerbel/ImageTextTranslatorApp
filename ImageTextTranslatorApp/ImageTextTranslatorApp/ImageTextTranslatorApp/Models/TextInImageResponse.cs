@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace ImageTextTranslatorApp.Models
+﻿namespace ImageTextTranslatorApp.Models
 {
     /// <summary>
-    /// Format of JSon Response for Text in Image Cognitive Service
+    /// Format of Json Response for Text in Image Cognitive Service
     /// </summary>
     internal class TextInImageResponse
     {
