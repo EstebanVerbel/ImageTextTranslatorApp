@@ -2,6 +2,7 @@
 using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
+using ImageTextTranslatorApp.ViewModels;
 
 namespace ImageTextTranslatorApp.Droid
 {
@@ -10,8 +11,8 @@ namespace ImageTextTranslatorApp.Droid
         #region -- Properties --
         
         public static TranslateFragment NewInstance() => new TranslateFragment { Arguments = new Bundle() };
-
-        // TODO: Add translate view model property
+        
+        public TranslateTextViewModel ViewModel { get; set; }
 
         #endregion
 
@@ -33,9 +34,7 @@ namespace ImageTextTranslatorApp.Droid
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = inflater.Inflate(Resource.Layout.fragment_translate, container, false);
-
-            // TODO: instanciate view model
-
+            ViewModel = new TranslateTextViewModel();
             _translateButton = view.FindViewById<Button>(Resource.Id.translateButton);
             _fromTextInputEditField = view.FindViewById<TextInputEditText>(Resource.Id.fromTextInputEditText);
             _toTextInputEditField = view.FindViewById<TextInputEditText>(Resource.Id.toTextInputEditText);
