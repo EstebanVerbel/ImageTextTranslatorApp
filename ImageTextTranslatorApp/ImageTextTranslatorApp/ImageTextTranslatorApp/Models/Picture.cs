@@ -1,9 +1,21 @@
-﻿namespace ImageTextTranslatorApp.Models
-{
-    public class Picture
-    {
-        public byte[] PictureData { get; set; }
+﻿using ImageTextTranslatorApp.Model;
 
-        public string Text { get; set; }
+namespace ImageTextTranslatorApp.Models
+{
+    public class Picture : BaseDataObject
+    {
+        public Picture()
+            : base()
+        {
+        }
+        
+        public byte[] PictureData { get; set; }
+        
+        private string _text;
+        public string Text
+        { 
+            get { return _text; }
+            set { SetProperty(ref _text, value); }
+        }
     }
 }
