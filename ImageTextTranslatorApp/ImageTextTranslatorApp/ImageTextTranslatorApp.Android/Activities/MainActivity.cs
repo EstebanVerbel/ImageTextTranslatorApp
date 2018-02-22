@@ -42,8 +42,8 @@ namespace ImageTextTranslatorApp.Droid
 
             Toolbar.MenuItemClick += (sender, e) =>
             {
-                var intent = new Intent(this, typeof(AddItemActivity)); ;
-                StartActivity(intent);
+                //var intent = new Intent(this, typeof(AddItemActivity)); ;
+                //StartActivity(intent);
             };
 
             SupportActionBar.SetDisplayHomeAsUpEnabled(false);

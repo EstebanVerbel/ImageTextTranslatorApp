@@ -22,7 +22,6 @@ namespace ImageTextTranslatorApp.Droid.Activities.Adapters
             switch (position)
             {
                 case 0: return PictureFragment.NewInstance();
-                // case 1: return AboutFragment.NewInstance();
                 case 1: return TranslateFragment.NewInstance();
             }
             return null;
