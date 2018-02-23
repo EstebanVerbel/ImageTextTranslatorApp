@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
@@ -16,7 +17,7 @@ namespace ImageTextTranslatorApp.Droid
         ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : BaseActivity
     {
-
+        
         protected override int LayoutResource => Resource.Layout.activity_main;
 
         ViewPager pager;
@@ -55,7 +56,7 @@ namespace ImageTextTranslatorApp.Droid
             MenuInflater.Inflate(Resource.Menu.top_menus, menu);
             return base.OnCreateOptionsMenu(menu);
         }
-
+        
     }
 }
 

@@ -99,7 +99,6 @@
   <ItemGroup>
     <Compile Include="Activities\Adapters\TabsAdapter.cs" />
     <Compile Include="Fragments\IFragmentVisible.cs" />
-    <Compile Include="Fragments\Interfaces\IShareWithFragment.cs" />
     <Compile Include="Fragments\PictureFragment.cs" />
     <Compile Include="Fragments\TranslateFragment.cs" />
     <Compile Include="Helpers\BitmapConverter.cs" />

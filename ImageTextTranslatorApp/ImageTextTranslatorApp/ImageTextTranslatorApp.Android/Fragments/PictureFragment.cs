@@ -108,7 +108,7 @@ namespace ImageTextTranslatorApp.Droid
 
         #endregion
 
-        #region -- IFragmentVisible --
+        #region -- Interfaces --
 
         public void BecameVisible()
         {
