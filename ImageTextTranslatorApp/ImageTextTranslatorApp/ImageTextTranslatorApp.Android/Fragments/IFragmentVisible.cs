@@ -1,7 +1,9 @@
+using System.Threading.Tasks;
+
 namespace ImageTextTranslatorApp.Droid
 {
     interface IFragmentVisible
     {
-        void BecameVisible();
+        Task BecameVisibleAsync();
     }
 }
