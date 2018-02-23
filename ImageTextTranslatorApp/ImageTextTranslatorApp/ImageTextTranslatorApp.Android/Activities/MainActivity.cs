@@ -38,7 +38,7 @@ namespace ImageTextTranslatorApp.Droid
             {
                 var fragment = adapter.InstantiateItem(pager, args.Position) as IFragmentVisible;
 
-                fragment?.BecameVisible();
+                fragment?.BecameVisibleAsync();
             };
 
             Toolbar.MenuItemClick += (sender, e) =>

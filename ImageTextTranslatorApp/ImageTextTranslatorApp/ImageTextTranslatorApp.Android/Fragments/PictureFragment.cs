@@ -7,7 +7,7 @@ using Android.Widget;
 using ImageTextTranslatorApp.Droid.Helpers;
 using ImageTextTranslatorApp.ViewModels;
 using System;
-using System.IO;
+using System.Threading.Tasks;
 
 namespace ImageTextTranslatorApp.Droid
 {
@@ -109,10 +109,9 @@ namespace ImageTextTranslatorApp.Droid
         #endregion
 
         #region -- Interfaces --
-
-        public void BecameVisible()
+        
+        public async Task BecameVisibleAsync()
         {
-            
         }
 
         #endregion

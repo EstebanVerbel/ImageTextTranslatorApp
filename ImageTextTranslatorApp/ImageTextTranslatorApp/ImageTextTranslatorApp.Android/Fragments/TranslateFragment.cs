@@ -1,7 +1,10 @@
-﻿using Android.OS;
+﻿using System;
+using System.Threading.Tasks;
+using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
+using ImageTextTranslatorApp.Models;
 using ImageTextTranslatorApp.ViewModels;
 
 namespace ImageTextTranslatorApp.Droid
@@ -65,10 +68,15 @@ namespace ImageTextTranslatorApp.Droid
         #endregion
 
         #region -- IFragmentVisible --
-
-        public void BecameVisible()
+        
+        public async Task BecameVisibleAsync()
         {
-            // TODO: Implement if need some logic on visible
+            Picture picture = await ViewModel.GetPicture();
+            
+            if (picture != null && (picture.Text != _fromTextInputEditField.Text))
+            {
+                _fromTextInputEditField.Text = picture.Text;
+            }
         }
 
         #endregion
