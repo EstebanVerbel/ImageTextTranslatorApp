@@ -1,7 +1,6 @@
 ﻿using ImageTextTranslatorApp.Helpers;
-using ImageTextTranslatorApp.Interfaces;
+using ImageTextTranslatorApp.Models;
 using ImageTextTranslatorApp.Services;
-using ImageTextTranslatorApp.Model;
 
 namespace ImageTextTranslatorApp
 {
@@ -13,7 +12,7 @@ namespace ImageTextTranslatorApp
 
         public static void Initialize()
         {
-            ServiceLocator.Instance.Register<IDataStore<Item>, MockDataStore>();
+            ServiceLocator.Instance.Register<IDataStore<Picture>, DataStore>();
         }
     }
 }
