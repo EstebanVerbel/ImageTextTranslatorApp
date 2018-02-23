@@ -9,7 +9,16 @@ namespace ImageTextTranslatorApp.ViewModels
 {
     public class PictureViewModel : BaseViewModel
     {
-        public Picture Picture { get; set; }
+        private Picture _picture;
+        public Picture Picture
+        {
+            get { return _picture; }
+            set
+            {
+                _picture = value;
+                DataStore.AddItemAsync(value);
+            }
+        }
         
         public PictureViewModel()
         {

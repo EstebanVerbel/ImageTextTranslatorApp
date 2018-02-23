@@ -20,9 +20,9 @@ namespace ImageTextTranslatorApp.ViewModel
 
         public async Task AddItem(Item item)
         {
-            var _item = item as Item;
-            Items.Add(_item);
-            await DataStore.AddItemAsync(_item);
+            //var _item = item as Item;
+            //Items.Add(_item);
+            //await DataStore.AddItemAsync(_item);
         }
 
         public async Task ExecuteLoadItemsCommand()
@@ -36,7 +36,7 @@ namespace ImageTextTranslatorApp.ViewModel
             {
                 Items.Clear();
                 var items = await DataStore.GetItemsAsync(true);
-                Items.ReplaceRange(items);
+                //Items.ReplaceRange(items);
             }
             catch (Exception ex)
             {

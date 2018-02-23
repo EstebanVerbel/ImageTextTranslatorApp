@@ -1,5 +1,5 @@
 ﻿using ImageTextTranslatorApp.Helpers;
-using ImageTextTranslatorApp.Model;
+using ImageTextTranslatorApp.Models;
 using ImageTextTranslatorApp.Services;
 
 
@@ -11,7 +11,7 @@ namespace ImageTextTranslatorApp.ViewModel
         /// <summary>
         /// Get the azure service instance
         /// </summary>
-        public IDataStore<Item> DataStore => ServiceLocator.Instance.Get<IDataStore<Item>>();
+        public IDataStore<Picture> DataStore => ServiceLocator.Instance.Get<IDataStore<Picture>>();
 
         bool isBusy = false;
         public bool IsBusy
