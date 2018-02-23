@@ -1,8 +1,6 @@
 ﻿using ImageTextTranslatorApp.Models;
 using ImageTextTranslatorApp.Models.Commands;
-using ImageTextTranslatorApp.Services;
 using ImageTextTranslatorApp.ViewModel;
-using System;
 using System.Windows.Input;
 
 namespace ImageTextTranslatorApp.ViewModels
