@@ -16,9 +16,17 @@ namespace ImageTextTranslatorApp.ViewModels
         /// Gets Picture from DataStore
         /// </summary>
         /// <returns></returns>
-        public async Task<Picture> GetPicture()
+        public async Task<string> GetImageText()
         {
-            return await DataStore.GetItemAsync("");
+            // get picture from data store
+            Picture picture = await DataStore.GetItemAsync("");
+
+            string imageText = "No Text has been read yet";
+
+            if (picture != null)
+                 imageText = picture.Text;
+
+            return imageText;
         }
         
     }

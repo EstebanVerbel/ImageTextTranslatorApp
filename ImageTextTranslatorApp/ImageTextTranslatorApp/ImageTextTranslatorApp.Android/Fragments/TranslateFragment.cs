@@ -71,12 +71,7 @@ namespace ImageTextTranslatorApp.Droid
         
         public async Task BecameVisibleAsync()
         {
-            Picture picture = await ViewModel.GetPicture();
-            
-            if (picture != null && (picture.Text != _fromTextInputEditField.Text))
-            {
-                _fromTextInputEditField.Text = picture.Text;
-            }
+            _fromTextInputEditField.Text = await ViewModel.GetImageText();
         }
 
         #endregion
