@@ -96,8 +96,7 @@ namespace ImageTextTranslatorApp.Droid
 
         private void SetViewModelPictureStream(Bitmap bitmap)
         {
-            ViewModel.Picture = new Models.Picture();
-            ViewModel.Picture.PictureData =  ConvertBitmapToByteArray(bitmap);
+            ViewModel.PictureData =  ConvertBitmapToByteArray(bitmap);
         }
 
         private byte[] ConvertBitmapToByteArray(Bitmap bitmap)
