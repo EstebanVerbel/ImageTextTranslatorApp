@@ -46,6 +46,7 @@
     <Compile Include="Interfaces\IMessageDialog.cs" />
     <Compile Include="Models\BaseDataObject.cs" />
     <Compile Include="Models\Commands\GetImageTextCommand.cs" />
+    <Compile Include="Models\Commands\TranslateTextCommand.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\TextInImageResponse.cs" />
