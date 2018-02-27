@@ -1,5 +1,6 @@
 ﻿using ImageTextTranslatorApp.Helpers;
 using ImageTextTranslatorApp.Models;
+using ImageTextTranslatorApp.Services.Constants;
 using ImageTextTranslatorApp.Services.Keys;
 using System.Linq;
 using System.Net.Http;
@@ -24,7 +25,7 @@ namespace ImageTextTranslatorApp.Services
             HttpClient httpClient = new HttpClient();
             
             // Request headers.
-            httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", APIKeys.ComputerVisionServiceKey);
+            httpClient.DefaultRequestHeaders.Add(AzureConstants.OcpApimSubscriptionKeyHeader, APIKeys.ComputerVisionServiceKey);
 
             // Request parameter. Set "handwriting" to false for printed text.
             //string requestParameters = "handwriting=true";

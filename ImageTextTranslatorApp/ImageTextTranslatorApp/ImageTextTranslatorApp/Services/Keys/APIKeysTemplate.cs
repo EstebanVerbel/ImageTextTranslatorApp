@@ -8,6 +8,6 @@
 
         internal static string TranslatorTextServiceKey = "";
 
-        internal static string TranslatorTextUriBase = "";
+        internal static string TranslatorTextUriBaseTemplate = "";
     }
 }
