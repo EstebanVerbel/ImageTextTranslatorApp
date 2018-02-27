@@ -1,6 +1,8 @@
 ﻿using ImageTextTranslatorApp.Models;
+using ImageTextTranslatorApp.Models.Commands;
 using ImageTextTranslatorApp.ViewModel;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ImageTextTranslatorApp.ViewModels
 {
@@ -27,6 +29,19 @@ namespace ImageTextTranslatorApp.ViewModels
                  imageText = picture.Text;
 
             return imageText;
+        }
+
+
+        private ICommand translateTextCommand;
+        /// <summary>
+        /// ICommand Gets Translated Text
+        /// </summary>
+        public ICommand GetTranslateTextCommand
+        {
+            get
+            {
+                return translateTextCommand ?? (translateTextCommand = new TranslateTextCommand());
+            }
         }
         
     }

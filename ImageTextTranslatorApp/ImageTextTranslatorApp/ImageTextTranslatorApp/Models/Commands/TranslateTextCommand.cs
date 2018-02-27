@@ -8,11 +8,11 @@ namespace ImageTextTranslatorApp.Models.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-        private Picture _picture;
+        
 
-        public TranslateTextCommand(Picture picture)
+        public TranslateTextCommand()
         {
-            _picture = picture;
+            
             // TODO: Request target language here. 
             // For now from language will always be english
         }
@@ -27,7 +27,8 @@ namespace ImageTextTranslatorApp.Models.Commands
         {
             TranslateTextService translateTextService = new TranslateTextService();
             string translatedText = await translateTextService.Translate();
-            _picture.TranslatedText = translatedText;
+
+            int debug = 0;
         }
     }
 }

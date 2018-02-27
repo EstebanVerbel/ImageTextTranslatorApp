@@ -44,9 +44,9 @@ namespace ImageTextTranslatorApp.Services
                     translatedText = "Unable to Translate Text";
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                throw new Exception("Program has failed to translate Text", e.InnerException);
             }
             
             return await Task.FromResult(translatedText);
