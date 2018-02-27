@@ -17,5 +17,12 @@ namespace ImageTextTranslatorApp.Models
             get { return _text; }
             set { SetProperty(ref _text, value); }
         }
+
+        private string _translatedText;
+        public string TranslatedText
+        {
+            get { return _translatedText; }
+            set { SetProperty(ref _translatedText, value); }
+        }
     }
 }
