@@ -48,27 +48,28 @@ namespace ImageTextTranslatorApp.Droid
         public override void OnStart()
         {
             base.OnStart();
-
-            // TODO: Add translate button click event handler
+            _translateButton.Click += _translateButton_Click;
         }
 
         public override void OnStop()
         {
             base.OnStop();
-
-            // TODO: Remove translate button click event handler
+            _translateButton.Click -= _translateButton_Click;
         }
 
         #endregion
 
         #region -- Event Handlers --
 
-
+        private void _translateButton_Click(object sender, EventArgs e)
+        {
+            ViewModel.GetTranslateTextCommand.Execute(null);
+        }
 
         #endregion
 
         #region -- IFragmentVisible --
-        
+
         public async Task BecameVisibleAsync()
         {
             _fromTextInputEditField.Text = await ViewModel.GetImageText();
