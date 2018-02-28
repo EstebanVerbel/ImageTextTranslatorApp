@@ -3,6 +3,7 @@ using ImageTextTranslatorApp.Services.Keys;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ImageTextTranslatorApp.Services
 {
@@ -24,6 +25,8 @@ namespace ImageTextTranslatorApp.Services
 
             string translatedText;
 
+            // TODO: Request response in Json
+
             try
             {
                 var translateResponse = await TranslateRequest(string.Format(APIKeys.TranslatorTextUriBaseTemplate, 
@@ -37,7 +40,7 @@ namespace ImageTextTranslatorApp.Services
 
                 if (translateResponse.IsSuccessStatusCode)
                 {
-                    translatedText = translateResponseContent;
+                    translatedText = GetTranslatedTextFromXMLResponse(translateResponseContent);
                 }
                 else
                 {
@@ -59,6 +62,14 @@ namespace ImageTextTranslatorApp.Services
                 client.DefaultRequestHeaders.Add(AzureConstants.OcpApimSubscriptionKeyHeader, azureSubscriptionKey);
                 return await client.GetAsync(url);
             }
+        }
+
+        private string GetTranslatedTextFromXMLResponse(string response)
+        {
+            XDocument xdoc = new XDocument();
+            xdoc = XDocument.Parse(response);
+
+            return xdoc.Root.Value;
         }
         
     }
