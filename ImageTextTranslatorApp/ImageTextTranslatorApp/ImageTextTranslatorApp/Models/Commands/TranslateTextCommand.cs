@@ -8,13 +8,13 @@ namespace ImageTextTranslatorApp.Models.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-        
+        private Tuple<string, string> _inputOutputText;
 
-        public TranslateTextCommand()
+        public TranslateTextCommand(Tuple<string, string> inputOutputText)
         {
-            
             // TODO: Request target language here. 
             // For now from language will always be english
+            _inputOutputText = inputOutputText;
         }
         
         public bool CanExecute(object parameter)
@@ -25,10 +25,13 @@ namespace ImageTextTranslatorApp.Models.Commands
 
         public async void Execute(object parameter)
         {
-            TranslateTextService translateTextService = new TranslateTextService();
+            string text = _inputOutputText.Item1;
+            // launch translate text service
+            TranslateTextService translateTextService = new TranslateTextService(text);
             string translatedText = await translateTextService.Translate();
 
-            int debug = 0;
+            // set text and translated text
+            _inputOutputText = new Tuple<string, string>(text, translatedText);
         }
     }
 }

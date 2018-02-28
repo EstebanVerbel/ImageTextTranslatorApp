@@ -1,6 +1,7 @@
 ﻿using ImageTextTranslatorApp.Models;
 using ImageTextTranslatorApp.Models.Commands;
 using ImageTextTranslatorApp.ViewModel;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -8,6 +9,7 @@ namespace ImageTextTranslatorApp.ViewModels
 {
     public class TranslateTextViewModel : BaseViewModel
     {
+        internal Tuple<string, string> InputOutputText { private set; get; }
         
         public TranslateTextViewModel()
         {
@@ -26,8 +28,11 @@ namespace ImageTextTranslatorApp.ViewModels
             string imageText = "No Text has been read yet";
 
             if (picture != null)
-                 imageText = picture.Text;
-
+            {
+                imageText = picture.Text;
+                InputOutputText = new Tuple<string, string>(imageText, "");
+            }
+            
             return imageText;
         }
 
@@ -40,7 +45,7 @@ namespace ImageTextTranslatorApp.ViewModels
         {
             get
             {
-                return translateTextCommand ?? (translateTextCommand = new TranslateTextCommand());
+                return translateTextCommand ?? (translateTextCommand = new TranslateTextCommand(InputOutputText));
             }
         }
         

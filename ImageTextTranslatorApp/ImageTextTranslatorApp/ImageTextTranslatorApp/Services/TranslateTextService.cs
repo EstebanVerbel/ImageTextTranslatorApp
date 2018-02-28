@@ -9,10 +9,12 @@ namespace ImageTextTranslatorApp.Services
 {
     internal class TranslateTextService
     {
+        private string _text;
 
-        internal TranslateTextService()
+        internal TranslateTextService(string text)
         {
-
+            // TODO: need to pass target language. From language will always be english for now
+            _text = text;
         }
 
         internal async Task<string> Translate()
@@ -24,13 +26,11 @@ namespace ImageTextTranslatorApp.Services
             //var translateResponse = await TranslateRequest(string.Format(TranslateUrlTemplate, "Hello world.", "en", "fr", "general"), AzureSubscriptionKey);
 
             string translatedText;
-
-            // TODO: Request response in Json
-
+            
             try
             {
-                var translateResponse = await TranslateRequest(string.Format(APIKeys.TranslatorTextUriBaseTemplate, 
-                                                                                    "Hello world.", 
+                var translateResponse = await TranslateRequest(string.Format(APIKeys.TranslatorTextUriBaseTemplate,
+                                                                                    _text, 
                                                                                     fromLanguageCode, 
                                                                                     toLanguageCode, 
                                                                                     "general"),
