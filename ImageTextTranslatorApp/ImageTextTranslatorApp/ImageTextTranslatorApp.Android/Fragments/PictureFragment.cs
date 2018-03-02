@@ -24,7 +24,6 @@ namespace ImageTextTranslatorApp.Droid
         #region -- Members --
 
         private Button _takePictureButton;
-        private Button _readTextButton;
         private ImageView _pictureImageView;
 
         #endregion
@@ -42,7 +41,6 @@ namespace ImageTextTranslatorApp.Droid
             var view = inflater.Inflate(Resource.Layout.fragment_picture, container, false);
             ViewModel = new PictureViewModel();
             _takePictureButton = view.FindViewById<Button>(Resource.Id.takePictureButton);
-            _readTextButton = view.FindViewById<Button>(Resource.Id.readTextButton);
             _pictureImageView = view.FindViewById<ImageView>(Resource.Id.pictureImageView);
             
             return view;
@@ -52,14 +50,12 @@ namespace ImageTextTranslatorApp.Droid
         {
             base.OnStart();
             _takePictureButton.Click += takePictureButton_Click;
-            _readTextButton.Click += readTextButton_Click;
         }
         
         public override void OnStop()
         {
             base.OnStop();
             _takePictureButton.Click -= takePictureButton_Click;
-            _readTextButton.Click -= readTextButton_Click;
         }
 
         public override void OnActivityResult(int requestCode, int resultCode, Intent data)
@@ -69,7 +65,10 @@ namespace ImageTextTranslatorApp.Droid
             _pictureImageView.SetImageBitmap(bitmap);
 
             if (bitmap != null)
+            {
                 SetViewModelPictureStream(bitmap);
+                ViewModel.GetTextCommand.Execute(null);
+            }
             // else
             // TODO: Display message to user saying something went wrong
    
@@ -84,12 +83,7 @@ namespace ImageTextTranslatorApp.Droid
             Intent intent = new Intent(MediaStore.ActionImageCapture);
             StartActivityForResult(intent, 0);
         }
-
-        private void readTextButton_Click(object sender, EventArgs e)
-        {
-            ViewModel.GetTextCommand.Execute(null);
-        }
-
+        
         #endregion
 
         #region -- Private Methods --

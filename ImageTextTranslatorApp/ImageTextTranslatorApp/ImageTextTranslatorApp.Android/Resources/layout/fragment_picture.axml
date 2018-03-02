@@ -11,18 +11,9 @@
   
     <Button
         android:id="@+id/takePictureButton"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="60dp"
         android:text="@string/take_picture"
-        android:gravity="center"
-        android:backgroundTint="@color/primary"
-        android:theme="@style/button_primary" />
-      
-    <Button 
-        android:id="@+id/readTextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="@string/read_text"
         android:gravity="center"
         android:backgroundTint="@color/primary"
         android:theme="@style/button_primary" />
