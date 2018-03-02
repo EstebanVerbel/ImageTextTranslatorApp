@@ -46,7 +46,7 @@ namespace ImageTextTranslatorApp.ViewModels
         {
             get
             {
-                return translateTextCommand ?? (translateTextCommand = new TranslateTextCommand(InputOutputText));
+                return (translateTextCommand = new TranslateTextCommand(InputOutputText));
             }
         }
         
