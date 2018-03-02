@@ -49,7 +49,7 @@ namespace ImageTextTranslatorApp.ViewModels
         /// </summary>
         public ICommand GetTextCommand
         {
-            get { return getImageTextCommand ?? (getImageTextCommand = new GetImageTextCommand(Picture)); }
+            get { return  (getImageTextCommand = new GetImageTextCommand(Picture)); }
         }
         
     }

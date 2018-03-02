@@ -3,7 +3,7 @@
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">ImageTextTranslatorApp</string>
 	<string name="tab1">Picture</string>
-	<string name="tab2">About</string>
+	<string name="tab2">Translate</string>
   <string name="signin">Sign In</string>
   <string name="notnow">Not Now</string>
   <string name="signing_in">Signing in...</string>
