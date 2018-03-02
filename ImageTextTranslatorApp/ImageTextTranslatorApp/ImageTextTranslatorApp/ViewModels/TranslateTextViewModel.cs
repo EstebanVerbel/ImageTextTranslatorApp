@@ -9,8 +9,10 @@ namespace ImageTextTranslatorApp.ViewModels
 {
     public class TranslateTextViewModel : BaseViewModel
     {
-        internal Tuple<string, string> InputOutputText { private set; get; }
+        public string[] InputOutputText { private set; get; }
         
+        public string TranslatedText { get { return InputOutputText[1]; } }
+
         public TranslateTextViewModel()
         {
             Title = "Translate Text";
@@ -30,13 +32,12 @@ namespace ImageTextTranslatorApp.ViewModels
             if (picture != null)
             {
                 imageText = picture.Text;
-                InputOutputText = new Tuple<string, string>(imageText, "");
+                InputOutputText = new string[] { imageText, "" };
             }
             
             return imageText;
         }
-
-
+        
         private ICommand translateTextCommand;
         /// <summary>
         /// ICommand Gets Translated Text
