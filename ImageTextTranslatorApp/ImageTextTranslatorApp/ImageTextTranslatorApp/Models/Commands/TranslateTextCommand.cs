@@ -31,6 +31,10 @@ namespace ImageTextTranslatorApp.Models.Commands
             TranslateTextService translateTextService = new TranslateTextService(text);
             // set text and translated text
             _inputOutputText[1] = await translateTextService.Translate();
+            
+            // launch callback function
+            var callback = parameter as Action;
+            callback();
         }
     }
 }

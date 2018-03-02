@@ -63,9 +63,16 @@ namespace ImageTextTranslatorApp.Droid
 
         private void _translateButton_Click(object sender, EventArgs e)
         {
-            ViewModel.GetTranslateTextCommand.Execute(null);
+            // launch translate service and set translated text
+            Action callBack = new Action(() => DisplayText());
+            ViewModel.GetTranslateTextCommand.Execute(callBack);
         }
 
+        private void DisplayText()
+        {
+            _toTextInputEditField.Text = ViewModel.TranslatedText;
+        }
+        
         #endregion
 
         #region -- IFragmentVisible --
