@@ -14,9 +14,9 @@ namespace ImageTextTranslatorApp.iOS
 		{
 			base.ViewDidLoad();
 
-			Title = ViewModel.Title;
-			ItemNameLabel.Text = ViewModel.Item.Text;
-			ItemDescriptionLabel.Text = ViewModel.Item.Description;
+			//Title = ViewModel.Title;
+			//ItemNameLabel.Text = ViewModel.Item.Text;
+			//ItemDescriptionLabel.Text = ViewModel.Item.Description;
 
 		}
 

@@ -22,15 +22,15 @@ namespace ImageTextTranslatorApp.iOS
 
             // Perform any additional setup after loading the view, typically from a nib.
 
-            btnSaveItem.TouchUpInside += async (sender, e) =>
-			{
-				var _item = new Item();
-				_item.Text = txtTitle.Text;
-				_item.Description = txtDesc.Text;
+   //         btnSaveItem.TouchUpInside += async (sender, e) =>
+			//{
+			//	var _item = new Item();
+			//	_item.Text = txtTitle.Text;
+			//	_item.Description = txtDesc.Text;
 
-                await ViewModel.AddItem(_item);
-                NavigationController.PopViewController(true);
-			};
+   //             await ViewModel.AddItem(_item);
+   //             NavigationController.PopViewController(true);
+			//};
 		}
 
 		public override void DidReceiveMemoryWarning()
