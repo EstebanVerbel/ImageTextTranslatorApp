@@ -14,5 +14,8 @@ namespace ImageTextTranslatorApp.iOS
     [Register ("PictureViewController")]
     partial class PictureViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
