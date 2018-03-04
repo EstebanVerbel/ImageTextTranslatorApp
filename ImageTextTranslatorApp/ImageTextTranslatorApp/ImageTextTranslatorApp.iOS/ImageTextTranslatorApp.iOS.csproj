@@ -196,6 +196,10 @@
     <Compile Include="Helpers\Utils.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewControllers\PictureViewController.cs" />
+    <Compile Include="ViewControllers\PictureViewController.designer.cs">
+      <DependentUpon>PictureViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewControllers\BrowseViewController.cs" />
     <Compile Include="ViewControllers\BrowseViewController.designer.cs">
       <DependentUpon>BrowseViewController.cs</DependentUpon>
