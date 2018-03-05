@@ -66,7 +66,7 @@ namespace ImageTextTranslatorApp.Droid
 
             if (bitmap != null)
             {
-                SetViewModelPictureStream(bitmap);
+                SetViewModelPictureData(bitmap);
                 ViewModel.GetTextCommand.Execute(null);
             }
             // else
@@ -88,9 +88,9 @@ namespace ImageTextTranslatorApp.Droid
 
         #region -- Private Methods --
 
-        private void SetViewModelPictureStream(Bitmap bitmap)
+        private void SetViewModelPictureData(Bitmap bitmap)
         {
-            ViewModel.PictureData =  ConvertBitmapToByteArray(bitmap);
+            ViewModel.PictureData = ConvertBitmapToByteArray(bitmap);
         }
 
         private byte[] ConvertBitmapToByteArray(Bitmap bitmap)
