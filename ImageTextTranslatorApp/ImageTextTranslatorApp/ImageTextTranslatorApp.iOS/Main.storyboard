@@ -161,8 +161,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="19288" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="TakePictureButton_TouchUpInside:" destination="18459" id="19289" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
                     </view>
                     <navigationItem title="Title" id="18536" key="navigationItem"/>
+                    <connections>
+                        <outlet property="takePictureUiButton" destination="19288" id="name-outlet-19288"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18461" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,8 +14,20 @@ namespace ImageTextTranslatorApp.iOS
     [Register ("PictureViewController")]
     partial class PictureViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton takePictureUiButton { get; set; }
+
+        [Action ("TakePictureButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void TakePictureButton_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
+            if (takePictureUiButton != null) {
+                takePictureUiButton.Dispose ();
+                takePictureUiButton = null;
+            }
         }
     }
 }

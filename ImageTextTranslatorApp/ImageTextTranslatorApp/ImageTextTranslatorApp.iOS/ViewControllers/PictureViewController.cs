@@ -9,5 +9,13 @@ namespace ImageTextTranslatorApp.iOS
         public PictureViewController (IntPtr handle) : base (handle)
         {
         }
+
+
+
+        partial void TakePictureButton_TouchUpInside(UIButton sender)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
