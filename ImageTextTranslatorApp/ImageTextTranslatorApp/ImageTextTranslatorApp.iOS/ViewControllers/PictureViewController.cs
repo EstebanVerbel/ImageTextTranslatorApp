@@ -27,6 +27,7 @@ namespace ImageTextTranslatorApp.iOS
             SetViewModelPictureData();
 
             // TODO: Display picture on a view
+
         }
 
         private void SetViewModelPictureData()
