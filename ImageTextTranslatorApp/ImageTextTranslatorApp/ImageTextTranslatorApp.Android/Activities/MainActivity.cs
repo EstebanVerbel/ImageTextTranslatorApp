@@ -40,22 +40,41 @@ namespace ImageTextTranslatorApp.Droid
 
                 fragment?.BecameVisibleAsync();
             };
-
-            Toolbar.MenuItemClick += (sender, e) =>
-            {
-                //var intent = new Intent(this, typeof(AddItemActivity)); ;
-                //StartActivity(intent);
-            };
-
+            
+            // add event handler for menu item clickS. For now to select target language
+            Toolbar.MenuItemClick += Toolbar_MenuItemClick;
+            
             SupportActionBar.SetDisplayHomeAsUpEnabled(false);
             SupportActionBar.SetHomeButtonEnabled(false);
         }
 
-        private void TestAddView_Click(object sender, EventArgs e)
+        private void Toolbar_MenuItemClick(object sender, Android.Support.V7.Widget.Toolbar.MenuItemClickEventArgs e)
         {
-            throw new NotImplementedException();
+            switch (e.Item.ItemId)
+            {
+                case Resource.Id.languageSpanishItem:
+                    break;
+                case Resource.Id.languageFrenchItem:
+                    break;
+                case Resource.Id.languageCantoneseTraditionalItem:
+                    break;
+                case Resource.Id.languageChineseSimplifiedItem:
+                    break;
+                case Resource.Id.languageChineseTraditionalItem:
+                    break;
+                case Resource.Id.languageGermanItem:
+                    break;
+                case Resource.Id.languageItalianItem:
+                    break;
+                case Resource.Id.languageKoreanItem:
+                    break;
+                case Resource.Id.languageRussianItem:
+                    break;
+                default:
+                    break;
+            }
         }
-
+        
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.top_menus, menu);
