@@ -21,4 +21,16 @@
   <string name="sign_in_text">Sign in with your account to save and sync items</string>
   <string name="take_picture">Take Picture</string>
   <string name="read_text">Read Text</string>
+
+  <string name="cantoneseTraditional">Cantonese Traditional</string>
+  <string name="chineseSimplified">Chinese Simplified</string>
+  <string name="chineseTraditional">Chinese Traditional</string>
+  <string name="french">French</string>
+  <string name="german">German</string>
+  <string name="italian">Italian</string>
+  <string name="japanese">Japanese</string>
+  <string name="korean">Korean</string>
+  <string name="russian">Russian</string>
+  <string name="spanish">Spanish</string>
+
 </resources>

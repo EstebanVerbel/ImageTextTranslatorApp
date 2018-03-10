@@ -20,8 +20,10 @@ namespace ImageTextTranslatorApp.Services
         internal async Task<string> Translate()
         {
             string fromLanguageCode = "en";
-            string toLanguageCode = "es";
-            
+            //string toLanguageCode = "es";
+            string toLanguageCode = "zh-Hans";
+            // 
+
             // var translateResponse = await TranslateRequest(string.Format(TranslateUrlTemplate, "Hello world.", "en", "fr", "general"), AzureSubscriptionKey);
             //var translateResponse = await TranslateRequest(string.Format(TranslateUrlTemplate, "Hello world.", "en", "fr", "general"), AzureSubscriptionKey);
 

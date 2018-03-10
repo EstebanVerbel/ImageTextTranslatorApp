@@ -1,7 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
   <item
-       android:id="@+id/menu_edit"
-       android:showAsAction="ifRoom"
-       android:title="Add" />
+       android:id="@+id/targetLanguageMenu"
+       android:title="Target Language">
+    
+    <menu>  
+      <item android:id="@+id/languageSpanishItem"
+            android:title="@string/spanish" />
+      <item android:id="@+id/languageFrenchItem"
+            android:title="@string/french" />
+      <item android:id="@+id/languageCantoneseTraditionalItem"
+            android:title="@string/cantoneseTraditional" />
+      <item android:id="@+id/languageChineseSimplifiedItem"
+            android:title="@string/chineseSimplified" />
+      <item android:id="@+id/languageChineseTraditionalItem"
+            android:title="@string/chineseTraditional" />
+      <item android:id="@+id/languageGermanItem"
+            android:title="@string/german" />
+      <item android:id="@+id/languageItalianItem"
+            android:title="@string/italian" />
+      <item android:id="@+id/languageJapaneseItem"
+            android:title="@string/japanese" />      
+      <item android:id="@+id/languageKoreanItem"
+            android:title="@string/korean" />
+      <item android:id="@+id/languageRussianItem"
+            android:title="@string/russian" />
+    </menu>
+    
+  </item>
 </menu>

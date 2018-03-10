@@ -22,7 +22,7 @@ namespace ImageTextTranslatorApp.Droid
 
         ViewPager pager;
         TabsAdapter adapter;
-
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,7 +33,7 @@ namespace ImageTextTranslatorApp.Droid
             pager.Adapter = adapter;
             tabs.SetupWithViewPager(pager);
             pager.OffscreenPageLimit = 3;
-
+            
             pager.PageSelected += (sender, args) =>
             {
                 var fragment = adapter.InstantiateItem(pager, args.Position) as IFragmentVisible;
@@ -49,6 +49,11 @@ namespace ImageTextTranslatorApp.Droid
 
             SupportActionBar.SetDisplayHomeAsUpEnabled(false);
             SupportActionBar.SetHomeButtonEnabled(false);
+        }
+
+        private void TestAddView_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
