@@ -2144,6 +2144,36 @@ namespace ImageTextTranslatorApp.Droid
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_previous_elevation = 2131099648;
 			
+			// aapt resource value: 0x7f060094
+			public const int languageCantoneseTraditionalItem = 2131099796;
+			
+			// aapt resource value: 0x7f060095
+			public const int languageChineseSimplifiedItem = 2131099797;
+			
+			// aapt resource value: 0x7f060096
+			public const int languageChineseTraditionalItem = 2131099798;
+			
+			// aapt resource value: 0x7f060093
+			public const int languageFrenchItem = 2131099795;
+			
+			// aapt resource value: 0x7f060097
+			public const int languageGermanItem = 2131099799;
+			
+			// aapt resource value: 0x7f060098
+			public const int languageItalianItem = 2131099800;
+			
+			// aapt resource value: 0x7f060099
+			public const int languageJapaneseItem = 2131099801;
+			
+			// aapt resource value: 0x7f06009a
+			public const int languageKoreanItem = 2131099802;
+			
+			// aapt resource value: 0x7f06009b
+			public const int languageRussianItem = 2131099803;
+			
+			// aapt resource value: 0x7f060092
+			public const int languageSpanishItem = 2131099794;
+			
 			// aapt resource value: 0x7f06002f
 			public const int left = 2131099695;
 			
@@ -2164,9 +2194,6 @@ namespace ImageTextTranslatorApp.Droid
 			
 			// aapt resource value: 0x7f060086
 			public const int media_actions = 2131099782;
-			
-			// aapt resource value: 0x7f060091
-			public const int menu_edit = 2131099793;
 			
 			// aapt resource value: 0x7f06001d
 			public const int middle = 2131099677;
@@ -2323,6 +2350,9 @@ namespace ImageTextTranslatorApp.Droid
 			
 			// aapt resource value: 0x7f06007e
 			public const int takePictureButton = 2131099774;
+			
+			// aapt resource value: 0x7f060091
+			public const int targetLanguageMenu = 2131099793;
 			
 			// aapt resource value: 0x7f06008d
 			public const int text = 2131099789;
@@ -2691,11 +2721,26 @@ namespace ImageTextTranslatorApp.Droid
 			// aapt resource value: 0x7f090015
 			public const int bottom_sheet_behavior = 2131296277;
 			
+			// aapt resource value: 0x7f09002d
+			public const int cantoneseTraditional = 2131296301;
+			
 			// aapt resource value: 0x7f090016
 			public const int character_counter_pattern = 2131296278;
 			
+			// aapt resource value: 0x7f09002e
+			public const int chineseSimplified = 2131296302;
+			
+			// aapt resource value: 0x7f09002f
+			public const int chineseTraditional = 2131296303;
+			
 			// aapt resource value: 0x7f090021
 			public const int description = 2131296289;
+			
+			// aapt resource value: 0x7f090030
+			public const int french = 2131296304;
+			
+			// aapt resource value: 0x7f090031
+			public const int german = 2131296305;
 			
 			// aapt resource value: 0x7f090017
 			public const int hello = 2131296279;
@@ -2708,6 +2753,15 @@ namespace ImageTextTranslatorApp.Droid
 			
 			// aapt resource value: 0x7f090026
 			public const int info = 2131296294;
+			
+			// aapt resource value: 0x7f090032
+			public const int italian = 2131296306;
+			
+			// aapt resource value: 0x7f090033
+			public const int japanese = 2131296307;
+			
+			// aapt resource value: 0x7f090034
+			public const int korean = 2131296308;
 			
 			// aapt resource value: 0x7f090020
 			public const int learn_more = 2131296288;
@@ -2724,6 +2778,9 @@ namespace ImageTextTranslatorApp.Droid
 			// aapt resource value: 0x7f09002b
 			public const int read_text = 2131296299;
 			
+			// aapt resource value: 0x7f090035
+			public const int russian = 2131296309;
+			
 			// aapt resource value: 0x7f090029
 			public const int sign_in_text = 2131296297;
 			
@@ -2732,6 +2789,9 @@ namespace ImageTextTranslatorApp.Droid
 			
 			// aapt resource value: 0x7f09001d
 			public const int signing_in = 2131296285;
+			
+			// aapt resource value: 0x7f090036
+			public const int spanish = 2131296310;
 			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
@@ -2744,6 +2804,9 @@ namespace ImageTextTranslatorApp.Droid
 			
 			// aapt resource value: 0x7f09002a
 			public const int take_picture = 2131296298;
+			
+			// aapt resource value: 0x7f09002c
+			public const int target_language = 2131296300;
 			
 			// aapt resource value: 0x7f090023
 			public const int text = 2131296291;
