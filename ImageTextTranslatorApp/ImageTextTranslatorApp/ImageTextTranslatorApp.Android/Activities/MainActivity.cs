@@ -1,6 +1,4 @@
-﻿using System;
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Support.Design.Widget;
@@ -8,6 +6,7 @@ using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
 using ImageTextTranslatorApp.Droid.Activities.Adapters;
+using ImageTextTranslatorApp.Services;
 
 namespace ImageTextTranslatorApp.Droid
 {
@@ -17,7 +16,6 @@ namespace ImageTextTranslatorApp.Droid
         ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : BaseActivity
     {
-        
         protected override int LayoutResource => Resource.Layout.activity_main;
 
         ViewPager pager;
@@ -47,40 +45,54 @@ namespace ImageTextTranslatorApp.Droid
             SupportActionBar.SetDisplayHomeAsUpEnabled(false);
             SupportActionBar.SetHomeButtonEnabled(false);
         }
-
-        private void Toolbar_MenuItemClick(object sender, Android.Support.V7.Widget.Toolbar.MenuItemClickEventArgs e)
-        {
-            switch (e.Item.ItemId)
-            {
-                case Resource.Id.languageSpanishItem:
-                    break;
-                case Resource.Id.languageFrenchItem:
-                    break;
-                case Resource.Id.languageCantoneseTraditionalItem:
-                    break;
-                case Resource.Id.languageChineseSimplifiedItem:
-                    break;
-                case Resource.Id.languageChineseTraditionalItem:
-                    break;
-                case Resource.Id.languageGermanItem:
-                    break;
-                case Resource.Id.languageItalianItem:
-                    break;
-                case Resource.Id.languageKoreanItem:
-                    break;
-                case Resource.Id.languageRussianItem:
-                    break;
-                default:
-                    break;
-            }
-        }
         
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.top_menus, menu);
             return base.OnCreateOptionsMenu(menu);
         }
-        
+
+        private void Toolbar_MenuItemClick(object sender, Android.Support.V7.Widget.Toolbar.MenuItemClickEventArgs e)
+        {
+            switch (e.Item.ItemId)
+            {
+                case Resource.Id.languageSpanishItem:
+                    SetTargetLanguage(Language.Spanish);
+                    break;
+                case Resource.Id.languageFrenchItem:
+                    SetTargetLanguage(Language.French);
+                    break;
+                case Resource.Id.languageCantoneseTraditionalItem:
+                    SetTargetLanguage(Language.CantoneseTraditional);
+                    break;
+                case Resource.Id.languageChineseSimplifiedItem:
+                    SetTargetLanguage(Language.ChineseSimplified);
+                    break;
+                case Resource.Id.languageChineseTraditionalItem:
+                    SetTargetLanguage(Language.ChineseTraditional);
+                    break;
+                case Resource.Id.languageGermanItem:
+                    SetTargetLanguage(Language.German);
+                    break;
+                case Resource.Id.languageItalianItem:
+                    SetTargetLanguage(Language.Italian);
+                    break;
+                case Resource.Id.languageKoreanItem:
+                    SetTargetLanguage(Language.Korean);
+                    break;
+                case Resource.Id.languageRussianItem:
+                    SetTargetLanguage(Language.Russian);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void SetTargetLanguage(Language language)
+        {
+            LanguageStore.Instance.SetTargetLanguage(language);
+        }
+
     }
 }
 
