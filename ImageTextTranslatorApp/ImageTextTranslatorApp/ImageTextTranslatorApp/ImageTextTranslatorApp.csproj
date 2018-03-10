@@ -57,6 +57,7 @@
     <Compile Include="Services\IDataStore.cs" />
     <Compile Include="Services\Keys\APIKeys.cs" />
     <Compile Include="Services\Keys\APIKeysTemplate.cs" />
+    <Compile Include="Services\LanguageStore.cs" />
     <Compile Include="Services\MockDataStore.cs" />
     <Compile Include="Services\TranslateTextService.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
