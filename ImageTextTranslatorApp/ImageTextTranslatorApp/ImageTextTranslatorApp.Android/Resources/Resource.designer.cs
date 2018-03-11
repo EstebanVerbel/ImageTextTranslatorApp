@@ -2163,13 +2163,10 @@ namespace ImageTextTranslatorApp.Droid
 			public const int languageItalianItem = 2131099800;
 			
 			// aapt resource value: 0x7f060099
-			public const int languageJapaneseItem = 2131099801;
+			public const int languageKoreanItem = 2131099801;
 			
 			// aapt resource value: 0x7f06009a
-			public const int languageKoreanItem = 2131099802;
-			
-			// aapt resource value: 0x7f06009b
-			public const int languageRussianItem = 2131099803;
+			public const int languageRussianItem = 2131099802;
 			
 			// aapt resource value: 0x7f060092
 			public const int languageSpanishItem = 2131099794;

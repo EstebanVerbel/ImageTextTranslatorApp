@@ -19,8 +19,6 @@
             android:title="@string/german" />
       <item android:id="@+id/languageItalianItem"
             android:title="@string/italian" />
-      <item android:id="@+id/languageJapaneseItem"
-            android:title="@string/japanese" />      
       <item android:id="@+id/languageKoreanItem"
             android:title="@string/korean" />
       <item android:id="@+id/languageRussianItem"

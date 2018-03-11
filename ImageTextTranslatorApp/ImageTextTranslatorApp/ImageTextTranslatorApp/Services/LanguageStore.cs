@@ -21,7 +21,7 @@ namespace ImageTextTranslatorApp.Services
 
         public static LanguageStore Instance => _instance.Value;
         
-        public static Language SelectedTargetLanguage { get; private set; } = Language.Spanish;
+        public Language SelectedTargetLanguage { get; private set; } = Language.Spanish;
         
         public void SetTargetLanguage(Language language)
         {

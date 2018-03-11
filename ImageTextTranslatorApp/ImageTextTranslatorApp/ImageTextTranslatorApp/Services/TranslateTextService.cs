@@ -13,16 +13,13 @@ namespace ImageTextTranslatorApp.Services
 
         internal TranslateTextService(string text)
         {
-            // TODO: need to pass target language. From language will always be english for now
             _text = text;
         }
 
         internal async Task<string> Translate()
         {
             string fromLanguageCode = "en";
-            //string toLanguageCode = "es";
-            string toLanguageCode = "zh-Hans";
-            // 
+            string toLanguageCode = GetTargetLanguage();
 
             // var translateResponse = await TranslateRequest(string.Format(TranslateUrlTemplate, "Hello world.", "en", "fr", "general"), AzureSubscriptionKey);
             //var translateResponse = await TranslateRequest(string.Format(TranslateUrlTemplate, "Hello world.", "en", "fr", "general"), AzureSubscriptionKey);
@@ -55,6 +52,12 @@ namespace ImageTextTranslatorApp.Services
             }
             
             return await Task.FromResult(translatedText);
+        }
+        
+        private string GetTargetLanguage()
+        {
+            LanguageConstants languageConstants = new LanguageConstants();
+            return languageConstants.GetSelectedTargetLanguage();
         }
         
         private async Task<HttpResponseMessage> TranslateRequest(string url, string azureSubscriptionKey)

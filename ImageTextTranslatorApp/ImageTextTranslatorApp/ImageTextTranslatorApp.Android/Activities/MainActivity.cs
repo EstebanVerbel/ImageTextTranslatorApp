@@ -88,6 +88,10 @@ namespace ImageTextTranslatorApp.Droid
             }
         }
 
+        /// <summary>
+        /// Sets the chosen language on LanguageStore
+        /// </summary>
+        /// <param name="language"></param>
         private void SetTargetLanguage(Language language)
         {
             LanguageStore.Instance.SetTargetLanguage(language);
